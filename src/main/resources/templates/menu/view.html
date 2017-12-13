@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text="${menu.name}"></title>
+</head>
+<body>
+<nav th:replace="fragments :: navigation"></nav>
+
+<ul th:each="menu : ${menu.cheeses}">
+    <li th:text="${menu.name}"></li>
+</ul>
+<div>--------------------------------------------</div>
+<p><a th:href="'/menu/add-item?id='+${menu.id}">Add Cheese</a></p>
+
+</body>
+</html>
